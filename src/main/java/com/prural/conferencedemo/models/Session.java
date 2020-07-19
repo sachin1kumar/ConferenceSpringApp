@@ -1,14 +1,16 @@
 package com.prural.conferencedemo.models;
 
+import org.springframework.stereotype.Component;
+
 import javax.persistence.*;
 import java.util.List;
 
 @Entity(name = "sessions")
-public class Sessions {
+public class Session {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long sessionid;
+    private Long session_id;
     private String session_name;
     private String session_description;
     private Integer session_length;
@@ -19,16 +21,16 @@ public class Sessions {
             inverseJoinColumns = @JoinColumn(name = "speaker_id"))
     private List<Speaker> speakers;
 
-    public Sessions(){
+    public Session(){
 
     }
 
     public Long getSessionid() {
-        return sessionid;
+        return session_id;
     }
 
     public void setSessionid(Long sessionid) {
-        this.sessionid = sessionid;
+        this.session_id = sessionid;
     }
 
     public String getSession_name() {
