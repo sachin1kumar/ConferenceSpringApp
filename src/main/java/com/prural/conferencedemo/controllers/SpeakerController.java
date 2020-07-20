@@ -14,7 +14,7 @@ public class SpeakerController {
      * It provides us the instance of repository interface so that we
      * can perform CRUD operation on sessions table in our database.
      * */
-    @Autowired(required=false)
+    @Autowired
     private SpeakerRepository speakerRepository;
 
     /*GET request and it will provide all the speakers from the table.

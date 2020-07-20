@@ -4,6 +4,7 @@ import com.prural.conferencedemo.models.Session;
 import com.prural.conferencedemo.repositories.SessionRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
@@ -17,7 +18,7 @@ public class SessionController {
     * It provides us the instance of repository interface so that we
     * can perform CRUD operation on sessions table in our database.
     * */
-    @Autowired(required=false)
+    @Autowired
     private SessionRepository sessionRepository;
 
     /*GET request and it will provide all the sessions from the table.
