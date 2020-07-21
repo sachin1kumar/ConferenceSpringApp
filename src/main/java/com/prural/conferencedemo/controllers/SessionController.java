@@ -4,8 +4,8 @@ import com.prural.conferencedemo.models.Session;
 import com.prural.conferencedemo.repositories.SessionRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 /*Controllers takes the request from the user and communicate with repositories to perform various CRUD operations.
@@ -55,7 +55,7 @@ public class SessionController {
     @RequestMapping(value = "{id}", method = RequestMethod.PUT)
     public Session update(@PathVariable Long id, @RequestBody final Session session){
         Session existingSession = sessionRepository.getOne(id);
-        BeanUtils.copyProperties(session, existingSession, "session_id");
+        BeanUtils.copyProperties(session, existingSession, "sessionid");
         return sessionRepository.saveAndFlush(existingSession);
     }
 

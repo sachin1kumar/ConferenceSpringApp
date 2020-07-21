@@ -1,11 +1,13 @@
 package com.prural.conferencedemo.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity(name = "sessions")
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
 public class Session {
 
     @Id
